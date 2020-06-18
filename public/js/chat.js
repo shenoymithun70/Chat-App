@@ -53,7 +53,7 @@ socket.on("newMessage", function (message) {
     text: message.text,
     createdAt: formattedTime,
   });
-  document.getElementById("message-form").reset();
+
   const div = document.createElement("div");
   div.innerHTML = html;
   document.querySelector("#messages").appendChild(div);
@@ -128,6 +128,7 @@ document.querySelector("#submit-btn").addEventListener("click", function (e) {
     },
     function () {}
   );
+  document.getElementById("message-form").reset();
 });
 
 // document
@@ -157,6 +158,7 @@ document.querySelector("#buzz").addEventListener("click", function (e) {
     },
     function () {}
   );
+
   // document.getElementById("unbuzz").disabled = false;
   // document.getElementById("buzz").disabled = true;
 });
