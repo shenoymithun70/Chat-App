@@ -203,7 +203,11 @@ button:disabled {
     font-size: 1rem;
   }
   .chat__sidebar {
-    display: none;
+    width: 250px;
+    height: auto;
+  }
+  .chat__sidebar ol li {
+    list-style-type: none;
   }
   .chat__footer {
     flex-direction: column;
