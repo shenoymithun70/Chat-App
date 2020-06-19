@@ -66,7 +66,13 @@ socket.on("newMessage", function (message) {
 });
 
 socket.on("newBuzzMessage", function (message) {
-  const formattedTime = moment(message.createdAt).format("LTS");
+  var d = new Date(); // for now
+  var h = d.getHours(); // => 9
+  var mi = d.getMinutes(); // =>  30
+  var sec = d.getSeconds();
+  var ms = d.getMilliseconds();
+  var formattedTime = h + ":" + mi + ":" + sec + ":" + ms;
+  // const formattedTime = moment(message.createdAt).format("LTS");
   const template = document.querySelector("#buzz-message-template").innerHTML;
   const html = Mustache.render(template, {
     from: message.from,
